@@ -62,7 +62,7 @@ func Exporter() {
 	}
 
 	sheetNames := getSheetNames(xlsxFile)
-	fmt.Println("Sheets")
+	fmt.Println("<<Sheets>>")
 	for index, sheetName := range sheetNames {
 		fmt.Printf("(%v) => %v \n", index, sheetName)
 	}
@@ -83,15 +83,15 @@ func Exporter() {
 	tableHeaderValues := getDefaultJsonObjectKeys(tableRows)
 	var disabledTableHeaderValuesIndexes []int
 
-	fmt.Println("Table header values")
+	fmt.Println("<<Table header values>>")
 	for index, tableHeaderValue := range tableHeaderValues {
 		fmt.Printf("(%v) => %v \n", index, tableHeaderValue)
 	}
-	fmt.Print("disable some column (use ',' as separator):")
+	fmt.Print("hide some columns (use ',' as separator):")
 	disabledTableHeaderIndexesInput, _ := reader.ReadString('\n')
+	disabledTableHeadersIndexesWithoutNewLine := strings.TrimSuffix(disabledTableHeaderIndexesInput, "\n")
 
-	if disabledTableHeaderIndexesInput != "" {
-		disabledTableHeadersIndexesWithoutNewLine := strings.TrimSuffix(disabledTableHeaderIndexesInput, "\n")
+	if disabledTableHeadersIndexesWithoutNewLine != "" {
 		if disabledTableHeaderIsInCorrectFormat, _ := regexp.MatchString("^[0-9,]*$", disabledTableHeadersIndexesWithoutNewLine); disabledTableHeaderIsInCorrectFormat {
 			disabledTableHeadersIndexes := strings.Split(disabledTableHeadersIndexesWithoutNewLine, ",")
 			for _, disabledTableHeadersIndex := range disabledTableHeadersIndexes {
