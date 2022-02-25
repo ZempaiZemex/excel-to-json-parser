@@ -83,7 +83,7 @@ func Exporter() {
 	tableHeaderValues := getDefaultJsonObjectKeys(tableRows)
 	var disabledTableHeaderValuesIndexes []int
 
-	fmt.Println("<<Table header values>>")
+	fmt.Println("<<Table columns>>")
 	for index, tableHeaderValue := range tableHeaderValues {
 		fmt.Printf("(%v) => %v \n", index, tableHeaderValue)
 	}
