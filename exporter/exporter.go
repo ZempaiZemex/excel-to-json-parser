@@ -43,7 +43,7 @@ func intSliceContains(array []int, value int) bool {
 }
 
 func init() {
-	log.SetPrefix("Error:")
+	log.SetPrefix("Error:  ")
 	log.SetFlags(0)
 }
 
