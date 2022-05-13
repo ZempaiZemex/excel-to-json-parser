@@ -50,8 +50,7 @@ func init() {
 var reader = bufio.NewReader(os.Stdin)
 
 func Exporter() {
-	// input params
-	filePathValue := flag.String("file-path", "", "specify excel file folder")
+	filePathValue := flag.String("file", "", "specify excel file folder")
 	flag.Parse()
 
 	path := *filePathValue

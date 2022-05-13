@@ -8,7 +8,7 @@ Excel-to-json-parse is a tool for convert relation database style excel table to
 ## How to use it
 - clone repository
 - go to the project folder
-- run `go run . -file-path <path to file>`
+- run `go run . -file <path to file>`
 - select sheet
 - **optional:** hide some columns 
 
